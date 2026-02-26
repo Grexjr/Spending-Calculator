@@ -22,6 +22,18 @@ public class InputHandler {
         }
     }
 
+    public int readInt(UI display, int min, int max){
+        while(true){
+            try {
+                int input = Integer.parseInt(scanner.nextLine().trim());
+                if(min <= input && input <= max) return input;
+                display.display(StringConstants.INT_OUT_OF_BOUNDS);
+            } catch (NumberFormatException e) {
+                display.display(StringConstants.INVALID_INT_INPUT);
+            }
+        }
+    }
+
 
 
 

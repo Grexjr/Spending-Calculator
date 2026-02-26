@@ -17,6 +17,14 @@ public class ConsoleUI implements UI {
         render(message);
     }
 
+    public String getStringInput(){
+        return input.readString(this);
+    }
+
+    public int getIntInput(int min, int max){
+        return input.readInt(this,min,max);
+    }
+
     public void printMainMenu(){
         render(StringConstants.TITLE_STRING);
         render(StringConstants.BYLINE);

@@ -4,9 +4,13 @@ public class StringConstants {
 
     // Util strings
     public static final String NEWLINE = "%n";
+    public static final String ERROR = "ERROR";
 
     // Input invalid strings
     public static final String BLANK_STRING_INVALID = "Input cannot be blank!";
+    // Input invalid ints
+    public static final String INT_OUT_OF_BOUNDS = "Input must be between %d and %d!";
+    public static final String INVALID_INT_INPUT = "Input must be an integer!";
 
     public static final String TITLE_STRING = "SPENDING CALCULATOR";
     public static final String BYLINE = "By: Gavin March";
