@@ -3,15 +3,18 @@ package io.github.grexjr.spendingcalculator.ui;
 import io.github.grexjr.spendingcalculator.constants.StringConstants;
 import io.github.grexjr.spendingcalculator.input.InputHandler;
 
-import java.util.Scanner;
-
-public class ConsoleUI {
+public class ConsoleUI implements UI {
 
     private static final int MAIN_MENU_SPACING = 2;
     private final InputHandler input;
 
     public ConsoleUI(){
         input = new InputHandler();
+    }
+
+    @Override
+    public void display(String message) {
+        render(message);
     }
 
     public void printMainMenu(){
