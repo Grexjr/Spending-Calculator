@@ -7,7 +7,7 @@ public class StringConstants {
 
     public static final String TITLE_STRING = "SPENDING CALCULATOR";
     public static final String BYLINE = "By: Gavin March";
-    public static final String TITLE_OPTION_FORMAT = "%-10s | %-10s | %-10s | %-10s ";
+    public static final String TITLE_OPTION_FORMAT = "%-15s | %-15s | %-15s | %-15s ";
     public static final String[] TITLE_OPTIONS = new String[]{
             "1. Add Income",
             "2. Add Expense",
