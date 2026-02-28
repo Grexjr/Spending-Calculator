@@ -1,25 +1,35 @@
 package io.github.grexjr.spendingcalculator.ui;
 
 import io.github.grexjr.spendingcalculator.constants.StringConstants;
+import io.github.grexjr.spendingcalculator.input.InputHandler;
 
-import java.util.Scanner;
+public class ConsoleUI implements UI {
 
-public class ConsoleUI {
-
-    private static final int MAIN_MENU_SPACING = 5;
-    private final Scanner scanner;
+    private static final int MAIN_MENU_SPACING = 2;
+    private final InputHandler input;
 
     public ConsoleUI(){
-        scanner = new Scanner(System.in);
+        input = new InputHandler();
     }
 
-    public Scanner getScanner(){return scanner;}
+    @Override
+    public void display(String message) {
+        render(message);
+    }
+
+    public String getStringInput(){
+        return input.readString(this);
+    }
+
+    public int getIntInput(int min, int max){
+        return input.readInt(this,min,max);
+    }
 
     public void printMainMenu(){
         render(StringConstants.TITLE_STRING);
         render(StringConstants.BYLINE);
         for(int i = 0; i < MAIN_MENU_SPACING; i++){
-            render(StringConstants.NEWLINE);
+            render(String.format(StringConstants.NEWLINE));
         }
         String options = String.format(
                 StringConstants.TITLE_OPTION_FORMAT,
