@@ -33,9 +33,26 @@ public class SpendingCalculator {
             case 1 -> {System.out.println("success 1");}
             case 2 -> {System.out.println("success 2");}
             case 3 -> {System.out.println("success 3");}
-            case 4 -> running = false;
-            default -> ui.display(StringConstants.ERROR + "SpendingCalculator.35;"); // Maybe throw exception here
+            case 4 -> {}// Run instructions text
+            case 5 -> running = false;
+            default -> ui.display(StringConstants.ERROR + "SpendingCalculator.35;",true); // Maybe throw exception here
         }
+    }
+
+    private void runIncomes(){
+
+    }
+
+    private void addIncome(){
+
+    }
+
+    private void runExpenses(){
+
+    }
+
+    private void addExpense(){
+
     }
 
 

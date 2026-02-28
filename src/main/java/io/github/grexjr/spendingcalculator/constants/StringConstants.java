@@ -11,6 +11,8 @@ public class StringConstants {
     // Input invalid ints
     public static final String INT_OUT_OF_BOUNDS = "Input must be between %d and %d!";
     public static final String INVALID_INT_INPUT = "Input must be an integer!";
+    public static final String INVALID_DOUBLE_INPUT = "Input must be a decimal number!";
+    public static final String INVALID_INCOME_INPUT = "Income must be of form (amount,Date[MM/DD/YYYY],description)";
 
     public static final String TITLE_STRING = "SPENDING CALCULATOR";
     public static final String BYLINE = "By: Gavin March";
@@ -19,7 +21,8 @@ public class StringConstants {
             "1. Add Income",
             "2. Add Expense",
             "3. Print Totals",
-            "4. Quit"
+            "4. Instructions",
+            "5. Quit"
     };
 
 

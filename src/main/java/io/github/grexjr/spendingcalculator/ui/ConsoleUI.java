@@ -13,8 +13,8 @@ public class ConsoleUI implements UI {
     }
 
     @Override
-    public void display(String message) {
-        render(message);
+    public void display(String message,boolean newLine) {
+        render(message,newLine);
     }
 
     public String getStringInput(){
@@ -26,10 +26,10 @@ public class ConsoleUI implements UI {
     }
 
     public void printMainMenu(){
-        render(StringConstants.TITLE_STRING);
-        render(StringConstants.BYLINE);
+        render(StringConstants.TITLE_STRING,true);
+        render(StringConstants.BYLINE,true);
         for(int i = 0; i < MAIN_MENU_SPACING; i++){
-            render(String.format(StringConstants.NEWLINE));
+            render(String.format(StringConstants.NEWLINE),true);
         }
         String options = String.format(
                 StringConstants.TITLE_OPTION_FORMAT,
@@ -38,15 +38,16 @@ public class ConsoleUI implements UI {
                 StringConstants.TITLE_OPTIONS[2],
                 StringConstants.TITLE_OPTIONS[3]
         );
-        render(options);
+        render(options,true);
     }
 
     public void printAddExpense(){}
 
     public void printAddIncome(){}
 
-    private void render(String message){
-        System.out.println(message);
+    private void render(String message, boolean newLine){
+        if(newLine)System.out.println(message);
+        else System.out.print(message);
     }
 
 }

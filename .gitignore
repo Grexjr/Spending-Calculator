@@ -31,3 +31,5 @@ bin/
 ### CUSTOM ###
 SpendingCalculator.iml
 *.xml
+main.iml
+test.iml
