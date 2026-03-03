@@ -5,6 +5,8 @@ public class StringConstants {
     // Util strings
     public static final String NEWLINE = "%n";
     public static final String ERROR = "ERROR";
+    public static final String BACK_STRING = "BACK";
+    public static final String INPUT = "INPUT =>    ";
 
     // Input invalid strings
     public static final String BLANK_STRING_INVALID = "Input cannot be blank!";
@@ -16,14 +18,22 @@ public class StringConstants {
 
     public static final String TITLE_STRING = "SPENDING CALCULATOR";
     public static final String BYLINE = "By: Gavin March";
-    public static final String TITLE_OPTION_FORMAT = "%-15s | %-15s | %-15s | %-15s ";
+    public static final String TITLE_OPTION_FORMAT = "%-15s | %-15s | %-15s | %-15s | %-15s | %-15s";
     public static final String[] TITLE_OPTIONS = new String[]{
             "1. Add Income",
             "2. Add Expense",
             "3. Print Totals",
-            "4. Instructions",
-            "5. Quit"
+            "4. Print Summary",
+            "5. Instructions",
+            "6. Quit"
     };
+
+    public static final String ASK_FOR_ACCT_ITEM = "Please enter %s in csv format in the template:%n" +
+            "amount, date of transaction, description of transaction%n" +
+            "Type back to go back";
+    public static final String INCOME = "income";
+    public static final String EXPENSE = "expense";
+    public static final String INCOME_ADDED = "Income Added!";
 
 
 

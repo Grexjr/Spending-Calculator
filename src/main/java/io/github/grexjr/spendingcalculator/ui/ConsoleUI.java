@@ -25,6 +25,8 @@ public class ConsoleUI implements UI {
         return input.readInt(this,min,max);
     }
 
+    public String[] getAccountingItemInput(){return input.readAccountingItem(this);}
+
     public void printMainMenu(){
         render(StringConstants.TITLE_STRING,true);
         render(StringConstants.BYLINE,true);
@@ -36,14 +38,13 @@ public class ConsoleUI implements UI {
                 StringConstants.TITLE_OPTIONS[0],
                 StringConstants.TITLE_OPTIONS[1],
                 StringConstants.TITLE_OPTIONS[2],
-                StringConstants.TITLE_OPTIONS[3]
+                StringConstants.TITLE_OPTIONS[3],
+                StringConstants.TITLE_OPTIONS[4],
+                StringConstants.TITLE_OPTIONS[5]
         );
         render(options,true);
+        render(StringConstants.INPUT,false);
     }
-
-    public void printAddExpense(){}
-
-    public void printAddIncome(){}
 
     private void render(String message, boolean newLine){
         if(newLine)System.out.println(message);

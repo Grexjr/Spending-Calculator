@@ -57,10 +57,17 @@ public class InputHandler {
         }
     }
 
+    /**
+     * Reads accounting item. Re-asks for input if the input is not in proper format and is not the user commanding the
+     * program to go back.
+     * @param display
+     * @return
+     */
     public String[] readAccountingItem(UI display){
         while(true){
             String[] values = readString(display).split(",");
-            if (values.length != 3) display.display(StringConstants.INVALID_INCOME_INPUT, true);
+            if (values.length != 3 && !values[0].equalsIgnoreCase(StringConstants.BACK_STRING))
+                display.display(StringConstants.INVALID_INCOME_INPUT, true);
             return values;
         }
     }

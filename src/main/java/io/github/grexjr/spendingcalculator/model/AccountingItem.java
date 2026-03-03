@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class AccountingItem {
 
     private final double amount;
+    private final boolean isExpense;
     private LocalDate date;
     private String description;
 
@@ -15,19 +16,25 @@ public class AccountingItem {
         amount = 0.00;
         date = LocalDate.parse("01/01/1900");
         description = "Description";
+        isExpense = false;
     }
 
     /**
      * Constructor
      */
-    public AccountingItem(double amount, LocalDate date, String description){
+    public AccountingItem(double amount, LocalDate date, String description, boolean isExpense){
         this.amount = amount;
         this.date = date;
         this.description = description;
+        this.isExpense = isExpense;
     }
 
     public double getAmount() {
         return amount;
+    }
+
+    public boolean isExpense(){
+        return isExpense;
     }
 
     public LocalDate getDate() {
