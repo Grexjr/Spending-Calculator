@@ -31,18 +31,15 @@ public class ConsoleUI implements UI {
         render(StringConstants.TITLE_STRING,true);
         render(StringConstants.BYLINE,true);
         for(int i = 0; i < MAIN_MENU_SPACING; i++){
-            render(String.format(StringConstants.NEWLINE),true);
+            render(String.format(StringConstants.NEWLINE),false);
         }
-        String options = String.format(
-                StringConstants.TITLE_OPTION_FORMAT,
-                StringConstants.TITLE_OPTIONS[0],
-                StringConstants.TITLE_OPTIONS[1],
-                StringConstants.TITLE_OPTIONS[2],
-                StringConstants.TITLE_OPTIONS[3],
-                StringConstants.TITLE_OPTIONS[4],
-                StringConstants.TITLE_OPTIONS[5]
-        );
-        render(options,true);
+
+        for(int i = 0; i < StringConstants.TITLE_OPTIONS.length; i++){
+            render(String.format(StringConstants.TITLE_OPTION_FORMAT,StringConstants.TITLE_OPTIONS[i]),true);
+        }
+
+        render(String.format(StringConstants.NEWLINE),false);
+
         render(StringConstants.INPUT,false);
     }
 

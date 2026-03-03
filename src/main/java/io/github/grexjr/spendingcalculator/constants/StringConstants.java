@@ -16,9 +16,9 @@ public class StringConstants {
     public static final String INVALID_DOUBLE_INPUT = "Input must be a decimal number!";
     public static final String INVALID_INCOME_INPUT = "Income must be of form (amount,Date[MM/DD/YYYY],description)";
 
-    public static final String TITLE_STRING = "SPENDING CALCULATOR";
+    public static final String TITLE_STRING = "=========SPENDING CALCULATOR=========";
     public static final String BYLINE = "By: Gavin March";
-    public static final String TITLE_OPTION_FORMAT = "%-15s | %-15s | %-15s | %-15s | %-15s | %-15s";
+    public static final String TITLE_OPTION_FORMAT = " %-15s ";
     public static final String[] TITLE_OPTIONS = new String[]{
             "1. Add Income",
             "2. Add Expense",
@@ -34,6 +34,9 @@ public class StringConstants {
     public static final String INCOME = "income";
     public static final String EXPENSE = "expense";
     public static final String INCOME_ADDED = "Income Added!";
+
+    public static final String ACCOUNT_TITLE = "====ACCOUNT====";
+    public static final String ACCOUNTING_ITEM = "%-10s | %-10s | %,(-10.2f";
 
 
 
