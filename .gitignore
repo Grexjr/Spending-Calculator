@@ -33,3 +33,7 @@ SpendingCalculator.iml
 *.xml
 main.iml
 test.iml
+
+### DATA ###
+data/accounts/*.csv
+!.gitkeep
