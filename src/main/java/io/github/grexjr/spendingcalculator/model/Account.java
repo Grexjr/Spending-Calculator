@@ -56,6 +56,7 @@ public class Account {
         List<AccountingItem> incomes = items.stream()
                 .filter(i -> !i.isExpense())
                 .toList();
+        if(incomes.isEmpty()) return 0;
         return (sumIncome()/incomes.size());
     }
 
@@ -63,6 +64,7 @@ public class Account {
         List<AccountingItem> expenses = items.stream()
                 .filter(AccountingItem::isExpense)
                 .toList();
+        if(expenses.isEmpty()) return 0;
         return (sumExpense()/expenses.size());
     }
 
@@ -84,8 +86,8 @@ public class Account {
         double sum = 0.00;
         for(AccountingItem i : expenses){
             sum += i.getAmount();
-            sum *= -1; // Turn it negative
         }
+        sum *= -1; // Turn it negative
         return sum;
     }
 

@@ -20,23 +20,36 @@ public class StringConstants {
     public static final String BYLINE = "By: Gavin March";
     public static final String TITLE_OPTION_FORMAT = " %-15s ";
     public static final String[] TITLE_OPTIONS = new String[]{
-            "1. Add Income",
-            "2. Add Expense",
-            "3. Print Totals",
-            "4. Print Summary",
-            "5. Instructions",
-            "6. Quit"
+            "1. Add Item",
+            "2. Print Summary",
+            "3. Instructions",
+            "4. Quit"
     };
 
-    public static final String ASK_FOR_ACCT_ITEM = "Please enter %s in csv format in the template:%n" +
-            "amount, date of transaction, description of transaction%n" +
-            "Type back to go back";
-    public static final String INCOME = "income";
+    public static final String ASK_FOR_ACCT_ITEM = ">   Please enter account item in csv format in the template:%n" +
+            ">> amount, date of transaction, description of transaction%n" +
+            ">> Type back to go back";
     public static final String EXPENSE = "expense";
     public static final String INCOME_ADDED = "Income Added!";
 
     public static final String ACCOUNT_TITLE = "====ACCOUNT====";
     public static final String ACCOUNTING_ITEM = "%-10s | %-10s | %,(-10.2f";
+    public static final String ACCOUNT_TOTALS = "====ACCOUNT TOTALS====";
+    public static final String ACCOUNT_TOTAL_ITEMS = "Total Income: %.2f" +
+            "%nTotal Expenses: %.2f" +
+            "%nAverage Income: %.2f" +
+            "%nAverage Expense: %.2f%n";
+
+    public static final String SUMMARY_TITLE = "====ACCOUNT SUMMARY====";
+
+
+    public static final String INSTRUCTIONS_HEADER = "====INSTRUCTIONS====";
+    public static final String INSTRUCTIONS =
+            "> This is a spending calculator!%n> Use this to track finances. Type a number to enter a specific task, " +
+                    "i.e. 1 for entering an item to your account.%n> This will save your values to a file, " +
+                    "so you can access them.%n" +
+                    "> Items are in csv format of: [amount (two decimals), date (M/D/YY or MM/DD/YYYY), description]%n" +
+                    "> Type -back- or -BACK- in any menu to return to the main menu.%n";
 
 
 

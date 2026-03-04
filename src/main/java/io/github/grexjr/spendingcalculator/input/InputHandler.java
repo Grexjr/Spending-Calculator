@@ -24,6 +24,7 @@ public class InputHandler {
             String input = scanner.nextLine().trim();
             if (!input.isBlank()) return input;
             display.display(StringConstants.BLANK_STRING_INVALID,true);
+            display.display(StringConstants.INPUT,false);
         }
     }
 
@@ -42,6 +43,7 @@ public class InputHandler {
                 display.display(String.format(StringConstants.INT_OUT_OF_BOUNDS,min,max),true);
             } catch (NumberFormatException e) {
                 display.display(StringConstants.INVALID_INT_INPUT,true);
+                display.display(StringConstants.INPUT,false);
             }
         }
     }
