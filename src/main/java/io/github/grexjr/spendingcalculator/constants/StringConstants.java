@@ -23,7 +23,8 @@ public class StringConstants {
             "1. Add Item",
             "2. Print Summary",
             "3. Instructions",
-            "4. Quit"
+            "4. Save Account",
+            "5. Quit"
     };
 
     public static final String ASK_FOR_ACCT_ITEM = ">   Please enter account item in csv format in the template:%n" +
@@ -35,10 +36,10 @@ public class StringConstants {
     public static final String ACCOUNT_TITLE = "====ACCOUNT====";
     public static final String ACCOUNTING_ITEM = "%-10s | %-10s | %,(-10.2f";
     public static final String ACCOUNT_TOTALS = "====ACCOUNT TOTALS====";
-    public static final String ACCOUNT_TOTAL_ITEMS = "Total Income: %.2f" +
-            "%nTotal Expenses: %.2f" +
-            "%nAverage Income: %.2f" +
-            "%nAverage Expense: %.2f%n";
+    public static final String ACCOUNT_TOTAL_ITEMS = "Total Income: %,.2f" +
+            "%nTotal Expenses: %,(.2f" +
+            "%nAverage Income: %,.2f" +
+            "%nAverage Expense: %,(.2f%n";
 
     public static final String SUMMARY_TITLE = "====ACCOUNT SUMMARY====";
 
@@ -50,6 +51,11 @@ public class StringConstants {
                     "so you can access them.%n" +
                     "> Items are in csv format of: [amount (two decimals), date (M/D/YY or MM/DD/YYYY), description]%n" +
                     "> Type -back- or -BACK- in any menu to return to the main menu.%n";
+
+    public static final String SAVING_STRING = "Saving account...";
+    public static final String ACCOUNT_SAVED = "Account saved!";
+    public static final String LOADING_ACCOUNT = "Loading account...";
+    public static final String ACCOUNT_LOADED = "Account loaded!";
 
 
 

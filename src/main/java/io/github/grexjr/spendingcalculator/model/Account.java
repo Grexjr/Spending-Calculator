@@ -52,6 +52,14 @@ public class Account {
         totalExpenses = sumExpense();
     }
 
+    public void updateAccount(){
+        count++;
+        averageIncome = averageIncome();
+        averageExpense = averageExpense();
+        totalIncome = sumIncome();
+        totalExpenses = sumExpense();
+    }
+
     private double averageIncome(){
         List<AccountingItem> incomes = items.stream()
                 .filter(i -> !i.isExpense())

@@ -1,6 +1,7 @@
 package io.github.grexjr.spendingcalculator.controller;
 
 import io.github.grexjr.spendingcalculator.constants.StringConstants;
+import io.github.grexjr.spendingcalculator.inout.AccountIO;
 import io.github.grexjr.spendingcalculator.model.Account;
 import io.github.grexjr.spendingcalculator.model.AccountingItem;
 import io.github.grexjr.spendingcalculator.ui.ConsoleUI;
@@ -13,6 +14,7 @@ public class SpendingCalculator {
 
     private final ConsoleUI ui;
     private final Account account;
+    private final AccountIO accountIO;
 
     private boolean running;
     private boolean doingTask;
@@ -20,10 +22,14 @@ public class SpendingCalculator {
 
     public SpendingCalculator(){
         this.ui = new ConsoleUI();
+        this.accountIO = new AccountIO();
+        accountIO.initializeStorage();
+
         this.running = true;
         this.doingTask = false;
 
-        this.account = new Account();
+
+        this.account = accountIO.loadAccount();
     }
 
 
@@ -52,7 +58,8 @@ public class SpendingCalculator {
                 doingTask = true;
                 printInstructions();
             }// Run instructions text
-            case 4 -> running = false;
+            case 4 -> runSave();
+            case 5 -> running = false;
             default -> ui.display(StringConstants.ERROR + "SpendingCalculator.35;",true); // Maybe throw exception here
         }
     }
@@ -155,6 +162,12 @@ public class SpendingCalculator {
                 return;
             }
         }
+    }
+
+    private void runSave(){
+        ui.display(StringConstants.SAVING_STRING,true);
+        accountIO.save(account);
+        ui.display(StringConstants.ACCOUNT_SAVED,true);
     }
 
 
