@@ -6,34 +6,65 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OptionsPanel {
+public class OptionsPanel extends AbstractPanel {
 
-    private final JPanel container;
     private final List<JButton> buttons;
-    private LayoutManager layout;
+    private final boolean isLabeled;
+    private int axis;
 
-    ///  Box layout constructor
+    private JLabel label;
+
+
+    ///  Default constructor, defaults to Y Axis and non-labeled
+    public OptionsPanel(){
+        super(BoxLayout.Y_AXIS);
+        this.axis = BoxLayout.Y_AXIS;
+        this.buttons = new ArrayList<>();
+        this.isLabeled = false;
+    }
+
+    ///  Non-labeled options suite constructor
     public OptionsPanel(int axis){
-        this.container = new JPanel();
+        super(axis);
+        this.axis = axis;
         this.buttons = new ArrayList<>();
-        this.layout = new BoxLayout(container,axis);
+        this.isLabeled = false;
     }
 
-    public JPanel getContainer() { return container;}
-
-    public void init() {
-        container.setVisible(true);
-    }
-
-    public OptionsPanel(LayoutManager layout){
-        this.container = new JPanel(layout);
+    /// Full constructor, axis and label
+    public OptionsPanel(int axis, boolean isLabeled){
+        super(axis);
+        this.axis = axis;
         this.buttons = new ArrayList<>();
-        this.layout = layout;
+        // If the box is set to be labeled, prints with default label
+        this.isLabeled = isLabeled;
+        if(isLabeled){
+            this.label = new JLabel("DEFAULT TEXT"); //NOTE move constant
+            if(this.axis == BoxLayout.X_AXIS){
+                this.label.setAlignmentY(Component.CENTER_ALIGNMENT);
+            } else if(this.axis == BoxLayout.Y_AXIS){
+                this.label.setAlignmentX(Component.CENTER_ALIGNMENT);
+            }
+        }
     }
 
     public List<JButton> getButtons() { return buttons; }
-    public LayoutManager getLayout() { return layout; }
-    public void setLayout(LayoutManager layout) { this.layout = layout;}
+
+    public void setLabelText(String text) {
+        if(label != null) {
+            label.setText(text);
+        } else {
+            System.err.println("LABEL DOES NOT EXIST");
+        }
+    }
+
+    // Adds label if it exists first for labeled buttons
+    public void init() {
+        if(label != null){
+            container.add(this.label);
+        }
+        container.setVisible(true);
+    }
 
     // Will need to change this for different layouts but for now its fine, flow layout
     protected void renderButtons(){
@@ -49,6 +80,11 @@ public class OptionsPanel {
     protected JButton createButton(String name, ActionListener action){
         JButton button = new JButton(name);
         button.addActionListener(action);
+        if(this.axis == BoxLayout.X_AXIS){
+            button.setAlignmentY(Component.CENTER_ALIGNMENT);
+        } else if (this.axis == BoxLayout.Y_AXIS){
+            button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        }
         return button;
     }
 
