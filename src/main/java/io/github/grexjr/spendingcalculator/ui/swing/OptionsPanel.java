@@ -10,7 +10,20 @@ public class OptionsPanel {
 
     private final JPanel container;
     private final List<JButton> buttons;
-    private final LayoutManager layout;
+    private LayoutManager layout;
+
+    ///  Box layout constructor
+    public OptionsPanel(int axis){
+        this.container = new JPanel();
+        this.buttons = new ArrayList<>();
+        this.layout = new BoxLayout(container,axis);
+    }
+
+    public JPanel getContainer() { return container;}
+
+    public void init() {
+        container.setVisible(true);
+    }
 
     public OptionsPanel(LayoutManager layout){
         this.container = new JPanel(layout);
@@ -20,9 +33,10 @@ public class OptionsPanel {
 
     public List<JButton> getButtons() { return buttons; }
     public LayoutManager getLayout() { return layout; }
+    public void setLayout(LayoutManager layout) { this.layout = layout;}
 
     // Will need to change this for different layouts but for now its fine, flow layout
-    protected void addButtons(){
+    protected void renderButtons(){
         for(JButton b : buttons){
             container.add(b);
         }

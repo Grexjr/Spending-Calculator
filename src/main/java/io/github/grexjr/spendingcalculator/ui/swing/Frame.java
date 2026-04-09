@@ -1,6 +1,7 @@
 package io.github.grexjr.spendingcalculator.ui.swing;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Frame {
 
@@ -15,8 +16,9 @@ public class Frame {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
-    public JFrame getFrame() { return frame; }
+    public Container getContent() { return frame.getContentPane(); }
 
+    public void setContent(Container content) { frame.setContentPane(content); }
     public void setVisible(boolean visible) { frame.setVisible(visible); }
     public void setFocusable(boolean focusable) { frame.setFocusable(focusable); }
 
