@@ -1,0 +1,29 @@
+==== DESIGN DOCUMENT ===
+
+== Introduction
+    This will be a Java Swing-based Spending calculator that uses button presses to add text field inputs into a JTable
+    of expenses and incomes. A running total of the account will be stored in the far right column of the JTable, and
+    the entries will take the form of debits and credits.
+
+== GUI Design
+    The center of the screen stretching from the top will be the JTable. South of that will be the input suite where the
+    buttons and text fields reside.
+
+== Model Design
+    The model will be made up of AccountingItems, which will have an amount, description, and date. There will be an
+    account object, which will load a list of these accounting items that can be loaded and saved.
+
+== External Connections
+    Will be able to load .csv files into a full account with accounting items into the JTable.
+
+== Extensions
+    Can add summary information using a JMenubar at the top, as well as functionality to switch to a new account at
+    runtime.
+    Can add the ability to edit certain accounting items and members of the account.
+
+
+
+
+
+
+
