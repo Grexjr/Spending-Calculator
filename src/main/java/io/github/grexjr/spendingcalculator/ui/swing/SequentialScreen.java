@@ -4,6 +4,11 @@ import javax.swing.*;
 
 public abstract class SequentialScreen extends Screen {
 
+    protected void addComponent(JComponent c) {
+        setFormatting(c);
+        getPanel().add(c);
+    }
+
     public void addScreen(Screen s) {
         getPanel().add(s.getPanel());
     }

@@ -18,7 +18,7 @@ public class SwingUI {
     public SwingUI(){
         // Main window of the application
         window = new Window(TITLE,WIDTH,HEIGHT);
-
+        window.setResizable(true);
     }
 
     public void start(){
@@ -29,8 +29,7 @@ public class SwingUI {
     private void runMainMenu() {
         BoxScreen mainMenu = new BoxScreen(BoxLayout.Y_AXIS);
         mainMenu.addButton("Hello");
-        mainMenu.addLabel("Bye");
-        mainMenu.addTextField("Text!",5);
+        mainMenu.addLabel("B");
         window.setView(mainMenu);
     }
 

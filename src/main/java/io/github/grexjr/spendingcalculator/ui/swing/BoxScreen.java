@@ -31,7 +31,7 @@ public class BoxScreen extends SequentialScreen {
     }
 
     @Override
-    public void formatComponent(JComponent c) {
+    public void setFormatting(JComponent c) {
         // Details alignment formatting depending on axis value
         if(axis == BoxLayout.X_AXIS) c.setAlignmentY(alignment);
         if(axis == BoxLayout.Y_AXIS) c.setAlignmentX(alignment);
