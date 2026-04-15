@@ -1,5 +1,6 @@
 package io.github.grexjr.spendingcalculator.ui;
 
+import io.github.grexjr.spendingcalculator.ui.swing.FlowScreen;
 import io.github.grexjr.spendingcalculator.ui.swing.Screen;
 import io.github.grexjr.spendingcalculator.ui.swing.Window;
 
@@ -23,8 +24,9 @@ public class SwingUI {
     }
 
     private void runMainMenu() {
-        Screen mainMenu = new Screen();
-        mainMenu.addLabel("Hello world!");
+        FlowScreen mainMenu = new FlowScreen();
+        mainMenu.addButton("Hello");
+        mainMenu.addLabel("Bye");
         window.setView(mainMenu);
     }
 

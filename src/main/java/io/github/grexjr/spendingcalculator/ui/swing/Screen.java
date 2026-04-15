@@ -1,22 +1,23 @@
 package io.github.grexjr.spendingcalculator.ui.swing;
 
 import javax.swing.*;
+import java.awt.*;
 
 // Wrapper class for JPanel
-public class Screen {
+public abstract class Screen {
 
     private JPanel panel;
 
+    // An abstract screen wrapper for JPanel, children inherit to create their own layouts
     public Screen() {
         panel = new JPanel();
     }
 
-    JPanel getPanel() { return panel; }
+    // Protected to not expose JPanel
+    protected JPanel getPanel() { return panel; }
 
-    public void addLabel(String text) {
-        JLabel label = new JLabel(text);
-        panel.add(label);
-    }
+    // Protected to prevent outside classes from changing layout
+    protected void setLayout(LayoutManager layout) { panel.setLayout(layout); }
 
 
 }
