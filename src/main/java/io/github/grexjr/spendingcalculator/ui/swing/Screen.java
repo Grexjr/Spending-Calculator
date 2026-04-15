@@ -19,5 +19,14 @@ public abstract class Screen {
     // Protected to prevent outside classes from changing layout
     protected void setLayout(LayoutManager layout) { panel.setLayout(layout); }
 
+    protected void addComponent(JComponent c) {
+        formatComponent(c);
+        panel.add(c);
+    }
+
+    protected void formatComponent(JComponent c) {
+        // no op by default
+    }
+
 
 }

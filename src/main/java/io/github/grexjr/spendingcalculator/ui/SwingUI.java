@@ -1,8 +1,11 @@
 package io.github.grexjr.spendingcalculator.ui;
 
+import io.github.grexjr.spendingcalculator.ui.swing.BoxScreen;
 import io.github.grexjr.spendingcalculator.ui.swing.FlowScreen;
 import io.github.grexjr.spendingcalculator.ui.swing.Screen;
 import io.github.grexjr.spendingcalculator.ui.swing.Window;
+
+import javax.swing.*;
 
 public class SwingUI {
     // Constants
@@ -24,9 +27,10 @@ public class SwingUI {
     }
 
     private void runMainMenu() {
-        FlowScreen mainMenu = new FlowScreen();
+        BoxScreen mainMenu = new BoxScreen(BoxLayout.Y_AXIS);
         mainMenu.addButton("Hello");
         mainMenu.addLabel("Bye");
+        mainMenu.addTextField("Text!",5);
         window.setView(mainMenu);
     }
 
